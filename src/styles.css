@@ -1,0 +1,74 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 800px;
+}
+
+.grid-container {
+  display: inline-block;
+  margin: 20px;
+}
+
+h1,
+h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 30px); /* 10x10 grid */
+  grid-gap: 1px;
+  margin-top: 10px;
+}
+
+.grid-cell {
+  width: 30px;
+  height: 30px;
+  background-color: lightblue;
+  border: 1px solid #ccc;
+}
+.grid div {
+  width: 30px;
+  height: 30px;
+  background-color: #87ceeb;
+  border: 1px solid #ccc;
+}
+
+.grid div.hit {
+  background-color: red;
+}
+
+.grid div.miss {
+  background-color: lightgray;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#game-status {
+  font-size: 1.2em;
+  color: #333;
+}
