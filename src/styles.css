@@ -9,7 +9,14 @@ body {
   margin: 0;
   background-color: #f1f1f1;
 }
-
+#player-grid, #ai-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columns */
+  grid-template-rows: repeat(10, 1fr); /* 10 rows */
+  gap: 1px; /* Optional: adds space between cells */
+  width: 300px; /* Or whatever width works */
+  height: 300px; /* Or whatever height works */
+}
 .game-container {
   text-align: center;
   max-width: 800px;
@@ -71,4 +78,15 @@ button:hover {
 #game-status {
   font-size: 1.2em;
   color: #333;
+}
+
+.row {
+  display: flex;
+}
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
 }

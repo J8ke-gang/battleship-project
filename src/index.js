@@ -1,4 +1,3 @@
-import Player from "./player.js";
 import Game from "./game.js"; // Correct import path
 import "./styles.css";
 

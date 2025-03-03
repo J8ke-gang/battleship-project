@@ -1,23 +1,15 @@
-class BattleshipAI {
-  constructor(boardSize) {
-    this.boardSize = boardSize;
-    this.shots = new Set();
+import Player from "./player.js";
+
+class AI extends Player {
+  constructor(name, board) {
+    super(name, "computer", board);
   }
 
-  generateRandomCoordinate() {
-    const x = Math.floor(Math.random() * this.boardSize);
-    const y = Math.floor(Math.random() * this.boardSize);
-    return { x, y };
-  }
-
-  getNextShot() {
-    let shot;
-    do {
-      shot = this.generateRandomCoordinate();
-    } while (this.shots.has(`${shot.x},${shot.y}`));
-    this.shots.add(`${shot.x},${shot.y}`);
-    return shot;
+  randomMove(playerBoard) {
+    const x = Math.floor(Math.random() * playerBoard.size);
+    const y = Math.floor(Math.random() * playerBoard.size);
+    playerBoard.receiveAttack(x, y);
   }
 }
 
-export default BattleshipAI;
+export default AI;

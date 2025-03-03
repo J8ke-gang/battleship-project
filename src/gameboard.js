@@ -1,30 +1,30 @@
 import Player from "./player.js";
+import AI from "./ai.js";
+import createGrid from "./grid.js"; // Adjust the path as necessary
 
-// Define the GameBoard class here
 class GameBoard {
-  // Add the implementation of the GameBoard class
-}
-
-class Game {
-  constructor() {
-    this.playerBoard = new GameBoard();
-    this.aiBoard = new GameBoard();
+  constructor(playerBoard, aiBoard) {
+    this.playerBoard = playerBoard || this;
+    this.aiBoard = aiBoard || this;
     this.player = new Player("User", "human", this.playerBoard);
     this.ai = new AI("Computer", this.aiBoard);
   }
+
   start() {
     this.setupUI();
     this.addEventListeners();
   }
+
   setupUI() {
     const playerGrid = document.getElementById("player-grid");
-    const aiGrid = document.getElementById("ai-grid");
+    const aiGrid = document.getElementById("computer-grid");
 
     createGrid(playerGrid);
     createGrid(aiGrid);
   }
+
   addEventListeners() {
-    const aiGrid = document.getElementById("ai-grid");
+    const aiGrid = document.getElementById("computer-grid");
 
     aiGrid.addEventListener("click", (event) => {
       const x = event.target.dataset.x;
@@ -38,5 +38,4 @@ class Game {
   }
 }
 
-// Export the Game class correctly
-export default Game;
+export default GameBoard;
