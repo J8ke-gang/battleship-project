@@ -1,40 +1,25 @@
-import Player from "./player.js";
-import AI from "./ai.js";
-import createGrid from "./grid.js"; // Adjust the path as necessary
-
 class GameBoard {
-  constructor(playerBoard, aiBoard) {
-    this.playerBoard = playerBoard || this;
-    this.aiBoard = aiBoard || this;
-    this.player = new Player("User", "human", this.playerBoard);
-    this.ai = new AI("Computer", this.aiBoard);
+  constructor() {
+    this.board = Array(10).fill(null).map(() => Array(10).fill(null)); // 10x10 grid
+    this.ships = [];  // Array to hold ships
   }
 
-  start() {
-    this.setupUI();
-    this.addEventListeners();
+  // Add ships to the board
+  addShipToBoard(ship) {
+    // Logic for adding a ship (same as in the previous example)
   }
 
-  setupUI() {
-    const playerGrid = document.getElementById("player-grid");
-    const aiGrid = document.getElementById("computer-grid");
-
-    createGrid(playerGrid);
-    createGrid(aiGrid);
-  }
-
-  addEventListeners() {
-    const aiGrid = document.getElementById("computer-grid");
-
-    aiGrid.addEventListener("click", (event) => {
-      const x = event.target.dataset.x;
-      const y = event.target.dataset.y;
-
-      if (x !== undefined && y !== undefined) {
-        this.player.attack(this.aiBoard, Number(x), Number(y));
-        this.ai.randomMove(this.playerBoard);
-      }
-    });
+  // Method to handle receiving an attack on the board
+  receiveAttack(x, y) {
+    const cell = this.board[y][x];
+    if (cell !== null && cell !== "hit" && cell !== "miss") {
+      // The cell contains a ship
+      cell.hit();  // Register the hit on the ship
+      this.board[y][x] = "hit";  // Mark as hit
+      return true;
+    }
+    this.board[y][x] = "miss";  // Mark as miss if no ship
+    return false;
   }
 }
 

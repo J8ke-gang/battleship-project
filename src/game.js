@@ -32,12 +32,11 @@ class Game {
       const y = event.target.dataset.y;
 
       if (x !== undefined && y !== undefined) {
-        this.player.attack(this.aiBoard, Number(x), Number(y));
-        this.ai.randomMove(this.playerBoard);
+        this.player.attack(this.aiBoard, Number(x), Number(y));  // Player attacks AI
+        this.ai.randomMove(this.playerBoard);  // AI attacks player
       }
     });
   }
 }
 
-// Export the Game class correctly
 export default Game;

@@ -1,92 +1,99 @@
-/* styles.css */
-
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
-  background-color: #f1f1f1;
+  padding: 0;
+  background-color: #f4f4f4;
 }
-#player-grid, #ai-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr); /* 10 columns */
-  grid-template-rows: repeat(10, 1fr); /* 10 rows */
-  gap: 1px; /* Optional: adds space between cells */
-  width: 300px; /* Or whatever width works */
-  height: 300px; /* Or whatever height works */
-}
+
 .game-container {
   text-align: center;
-  max-width: 800px;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
 }
 
 .grid-container {
-  display: inline-block;
   margin: 20px;
-}
-
-h1,
-h2 {
-  font-size: 2em;
-  color: #333;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, 30px); /* 10x10 grid */
-  grid-gap: 1px;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(10, 30px);
+  gap: 2px;
   margin-top: 10px;
+  justify-content: center;
 }
 
-.grid-cell {
-  width: 30px;
-  height: 30px;
-  background-color: lightblue;
-  border: 1px solid #ccc;
-}
 .grid div {
   width: 30px;
   height: 30px;
-  background-color: #87ceeb;
   border: 1px solid #ccc;
+  background-color: lightblue;
 }
 
-.grid div.hit {
+.grid .ship {
+  background-color: darkblue;
+}
+
+.grid .water {
+  background-color: lightblue;
+}
+
+.grid .hit {
   background-color: red;
 }
 
-.grid div.miss {
+.grid .miss {
   background-color: lightgray;
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 20px 0;
-  cursor: pointer;
-  font-size: 1.2em;
+/* Ship Selection Styles */
+#ship-selection-container {
+  margin: 20px;
 }
 
-button:hover {
+#ship-selection .ship {
+  padding: 10px;
+  margin: 10px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#ship-selection .ship:active {
   background-color: #45a049;
 }
 
-#game-status {
-  font-size: 1.2em;
-  color: #333;
+/* Game Controls Styles */
+.game-controls {
+  margin-top: 30px;
 }
 
-.row {
-  display: flex;
-}
-.cell {
-  width: 30px;
-  height: 30px;
-  border: 1px solid black;
-  text-align: center;
+#start-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
   cursor: pointer;
+}
+
+#start-btn:hover {
+  background-color: #45a049;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }

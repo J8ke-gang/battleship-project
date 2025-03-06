@@ -13,6 +13,25 @@
         <h2>Your Grid</h2>
         <div id="player-grid" class="grid"></div>
       </div>
+      <!-- Ship Selection -->
+      <div id="ship-selection">
+        <h2>Place your ships</h2>
+        <div class="ship" id="carrier" data-size="5" draggable="true">
+          Carrier (5)
+        </div>
+        <div class="ship" id="battleship" data-size="4" draggable="true">
+          Battleship (4)
+        </div>
+        <div class="ship" id="cruiser" data-size="3" draggable="true">
+          Cruiser (3)
+        </div>
+        <div class="ship" id="submarine" data-size="3" draggable="true">
+          Submarine (3)
+        </div>
+        <div class="ship" id="destroyer" data-size="2" draggable="true">
+          Destroyer (2)
+        </div>
+      </div>
       <!-- Computer's Grid -->
       <div class="grid-container">
         <h2>Computer's Grid</h2>
@@ -24,7 +43,6 @@
         <p id="game-status">Game Status: Waiting...</p>
       </div>
     </div>
-
     <footer>Thibault web dev</footer>
   </body>
 </html>
