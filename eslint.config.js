@@ -1,12 +1,18 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import pluginReact from "eslint-plugin-react";
-
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  {files: ["**/*.{js,mjs,cjs,jsx}"]},
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
-];
+/** @type {import('eslint').Linter.Config} */
+export default {
+  parser: "@babel/eslint-parser",  // Use Babel parser to support modern syntax
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: "module",  // Enable ES Modules
+  },
+  env: {
+    browser: true,
+    node: true,
+  },
+  extends: [
+    "eslint:recommended",  // Base set of recommended rules
+  ],
+  rules: {
+    // Your custom rules
+  },
+};
